@@ -147,3 +147,8 @@ export async function getCurrentUser(): Promise<CurrentUserResponse | null> {
 
   return response.json() as Promise<CurrentUserResponse>;
 }
+export function acceptTerms(): Promise<CurrentUserResponse> {
+  return request<CurrentUserResponse>("/api/users/me/accept-terms", {
+    method: "POST",
+  });
+}
